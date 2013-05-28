@@ -5,8 +5,8 @@
         <description>Jekyll Bootstrap - Name Lastname</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2013-05-28T16:33:58+08:00</lastBuildDate>
-        <pubDate>2013-05-28T16:33:58+08:00</pubDate>
+        <lastBuildDate>2013-05-28T17:59:26+08:00</lastBuildDate>
+        <pubDate>2013-05-28T17:59:26+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -30,9 +30,15 @@
 
 &lt;h4 id='id4'&gt;准备环境&lt;/h4&gt;
 
-&lt;p&gt;安装debugging tools for windows（我用的是v6.12,其他版本未测试过), 添加其中的srcsrv目录到PATH中，方便调用其中的许多命令。 安装svn,推荐1.7版本以上（我用的是TortoiseSVN 1.7.12 64bit)，本文配置针对1.7（因为1.7修改了svn info的输出信息格式，因而需要稍改动下svn.pm文件）,确保svn.exe在PATH中，可以敲入命令svn info查看。 确保svn版本是英文版的，因为程序中会需要解析svn info的输出信息。 安装active perl,脚本中会用到&lt;/p&gt;
+&lt;p&gt;安装debugging tools for windows（我用的是v6.12,其他版本未测试过), 添加其中的srcsrv目录到PATH中，方便调用其中的许多命令。&lt;/p&gt;
 
-&lt;p&gt;修改srcsrv/svn.pm 在ln 208的 if ($FileRevision)后插入一行&lt;/p&gt;
+&lt;p&gt;安装svn,推荐1.7版本以上（我用的是TortoiseSVN 1.7.12 64bit)，本文配置针对1.7（因为1.7修改了svn info的输出信息格式，因而需要稍改动下svn.pm文件）,确保svn.exe在PATH中，可以敲入命令svn info查看。&lt;/p&gt;
+
+&lt;p&gt;确保svn版本是英文版的，因为程序中会需要解析svn info的输出信息。&lt;/p&gt;
+
+&lt;p&gt;安装active perl,脚本中会用到。&lt;/p&gt;
+
+&lt;p&gt;修改srcsrv/svn.pm，在ln 208的 if ($FileRevision)后插入一行&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$LocalFile = &amp;quot;$SourceRoot\\$LocalFile&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 
@@ -56,7 +62,7 @@
 
 &lt;pre&gt;&lt;code&gt;[e:\work\project\localsvn\crashtest\main.cpp] cmd: cmd /c svn.exe cat &amp;quot;https://127.0.0.1:8443/svn/Test/CrashTest/main.cpp@7&amp;quot; --non-interactive &amp;gt; &amp;quot;E:\Work\Project\LocalSvn\svn\Test\CrashTest\main.cpp\7\main.cpp&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;其实pdb文件是个开放的格式，其中的内容由不同的“流”组成，而微软提供的source index技术，就是在pdb中添加了一个名叫&amp;#8221;srcsrv&amp;#8221;的流，其中记录了这个PDB关联到的源文件在编译的时候在本地的地址，以及通过什么样的命令可以获取到，当vs在需要显示源码的时候，会先从看是否在能期待的路径中能找到源文件（这个期待的路径也就是程序被编译的时候的源码路径），如果找不到则会调用pdb中存储的命令行（注意！！只有在找不到的时候才会触发源码下载的流程，否则会使用本地的源文件，哪怕文件版本不一致，被这个坑了好久。。），执行之，（这时VS会弹出提示询问是否执行这个脚本），然后期待这个命令执行后，在临时目录中就能有这些文件的存在，然后显示之。&lt;/p&gt;
+&lt;p&gt;其实pdb文件是个开放的格式，其中的内容由不同的“流”组成，而微软提供的source index技术，就是在pdb中添加了一个名叫&amp;#8221;srcsrv&amp;#8221;的流，其中记录了这个PDB关联到的源文件在编译的时候在本地的地址，以及通过什么样的命令可以获取到，当vs在需要显示源码的时候，会先从看是否在能期待的路径中能找到源文件（这个期待的路径也就是程序被编译的时候的源码路径），如果找不到则会调用pdb中存储的命令行(&lt;strong&gt;注意！！只有在找不到的时候才会触发源码下载的流程，否则会使用本地的源文件，哪怕文件版本不一致，被这个坑了好久。。&lt;/strong&gt;），执行之，（这时VS会弹出提示询问是否执行这个脚本），然后期待这个命令执行后，在临时目录中就能有这些文件的存在，然后显示之。&lt;/p&gt;
 
 &lt;h3 id='pdb'&gt;发布pdb(建立符号服务器）&lt;/h3&gt;
 
@@ -89,9 +95,9 @@
 &lt;p&gt;&lt;a href='http://s.yunio.com/cE4hko&amp;quot;'&gt;Debugging Tools for Windows (x86) v6.12.zip&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href='http://s.yunio.com/CKBkUF'&gt;TortoiseSVN_x64_1_7_12.msi&lt;/a&gt;&lt;/p&gt;</description>
-                <link>http://username.github.io/source%20index%E6%8A%80%E6%9C%AF/2011/12/29/sourceindex%E6%8A%80%E6%9C%AF</link>
-                <guid>http://username.github.io/source%20index%E6%8A%80%E6%9C%AF/2011/12/29/sourceindex技术</guid>
-                <pubDate>2011-12-29T00:00:00+08:00</pubDate>
+                <link>http://username.github.io/source%20index%E6%8A%80%E6%9C%AF/2013/05/28/sourceindex%E6%8A%80%E6%9C%AF</link>
+                <guid>http://username.github.io/source%20index%E6%8A%80%E6%9C%AF/2013/05/28/sourceindex技术</guid>
+                <pubDate>2013-05-28T00:00:00+08:00</pubDate>
         </item>
 
 
