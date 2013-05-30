@@ -169,7 +169,9 @@
 
 <h4 id='socorrosym_socorro'>生成用于socorro(崩溃转储服务端的sym文件) (如果不用于socorro服务器，则不需要这一步)</h4>
 
-<p><a href='http://s.yunio.com/vecIze'>generate-sym.bat下载</a> 将上述几个文件放在要pdb目录中(相匹配的exe也需要同样存在这个目录里），运行generate-sym.bat，顺利的话输出目录中会产生out目录，然后需要手工添加这些文件到socorro服务器中，原先考虑过在socorro服务器上同时添加ftp服务（或者SVN服务），然后可以方便上传这些符号文件，但觉得太倒腾，反正发布版本的频率也不会很高，手工拷过去算了。</p>
+<p><a href='http://s.yunio.com/vecIze'>generate-sym.bat下载</a></p>
+
+<p>将上述几个文件放在要pdb目录中(相匹配的exe也需要同样存在这个目录里），运行generate-sym.bat，顺利的话输出目录中会产生out目录，然后需要手工添加这些文件到socorro服务器中，原先考虑过在socorro服务器上同时添加ftp服务（或者SVN服务），然后可以方便上传这些符号文件，但觉得太倒腾，反正发布版本的频率也不会很高，手工拷过去算了。</p>
 
 <h3 id='pdb'>发布pdb(建立符号服务器）</h3>
 
