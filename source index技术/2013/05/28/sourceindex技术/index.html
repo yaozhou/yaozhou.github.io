@@ -167,6 +167,10 @@
 
 <p>其实pdb文件是个开放的格式，其中的内容由不同的“流”组成，而微软提供的source index技术，就是在pdb中添加了一个名叫&#8221;srcsrv&#8221;的流，其中记录了这个PDB关联到的源文件在编译的时候在本地的地址，以及通过什么样的命令可以获取到，当vs在需要显示源码的时候，会先从看是否在能期待的路径中能找到源文件（这个期待的路径也就是程序被编译的时候的源码路径），如果找不到则会调用pdb中存储的命令行(<strong>注意！！只有在找不到的时候才会触发源码下载的流程，否则会使用本地的源文件，哪怕文件版本不一致，被这个坑了好久。。</strong>），执行之，（这时VS会弹出提示询问是否执行这个脚本），然后期待这个命令执行后，在临时目录中就能有这些文件的存在，然后显示之。</p>
 
+<h4 id='socorrosym_socorro'>生成用于socorro(崩溃转储服务端的sym文件) (如果不用于socorro服务器，则不需要这一步)</h4>
+
+<p><a href='http://s.yunio.com/vecIze'>generate-sym.bat下载</a> 将上述几个文件放在要pdb目录中(相匹配的exe也需要同样存在这个目录里），运行generate-sym.bat，顺利的话输出目录中会产生out目录，然后需要手工添加这些文件到socorro服务器中，原先考虑过在socorro服务器上同时添加ftp服务（或者SVN服务），然后可以方便上传这些符号文件，但觉得太倒腾，反正发布版本的频率也不会很高，手工拷过去算了。</p>
+
 <h3 id='pdb'>发布pdb(建立符号服务器）</h3>
 
 <pre><code>symstore add /s \\pdb-server\pub_symbols /r /f path/to/pdb/\*pdb /t your-product-name</code></pre>

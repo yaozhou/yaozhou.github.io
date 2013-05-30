@@ -4,13 +4,76 @@
  <title>Jekyll Bootstrap</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2013-05-29T15:40:06+08:00</updated>
+ <updated>2013-05-30T11:48:45+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>Name Lastname</name>
    <email>blah@email.test</email>
  </author>
 
+ 
+ <entry>
+   <title>Socorro部署</title>
+   <link href="http://username.github.io/google-breakpad%20%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%83%A8%E7%BD%B2/2013/05/30/socorro%E9%83%A8%E7%BD%B2"/>
+   <updated>2013-05-30T00:00:00+08:00</updated>
+   <id>http://username.github.io/google-breakpad%20%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%83%A8%E7%BD%B2/2013/05/30/socorro部署</id>
+   <content type="html">&lt;h3 id='id14'&gt;简介&lt;/h3&gt;
+
+&lt;p&gt;socorro为和google-breakpad配套使用的崩溃转储的服务端，功能强大，但也是我见到过的最复杂的项目，复杂到自己总不禁怀疑其复杂度是否真的有必要，同时也是个非常坑爹的开源项目，我是在修改了6、7处代码后才能正常使用其功能的，并且缺乏必要的文档，导致需要跟踪到代码深处才知道一些必要的数据格式细节。&lt;/p&gt;
+
+&lt;p&gt;总而言之，这是个非常坑的项目，如果有其他选择，不推荐选择它。&lt;/p&gt;
+
+&lt;p&gt;这篇文章在自己修改后的源码为基础，（同时我也添加了一些shell脚本，为方便使用）， git仓库 https://github.com/mozilla/socorro.git 版本 DateDate: Tue Mar 5 17:46:10 2013 -0800 commit f89c441cb5f035df0035e4283d03f653954e6edf&lt;/p&gt;
+
+&lt;h3 id='id15'&gt;部署步骤&lt;/h3&gt;
+
+&lt;h4 id='id16'&gt;下载资源&lt;/h4&gt;
+
+&lt;p&gt;socorro,socorro-crashstats,tools下载 coming soon(等知道怎样解决压缩文件中文件权限的问题后上传）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install curl lessc&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id='postgre'&gt;安装postgre&lt;/h4&gt;
+
+&lt;p&gt;参见另一篇 postgre部署&lt;/p&gt;
+
+&lt;h4 id='id17'&gt;安装数据库客户端&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install pgadmin3&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id='id18'&gt;导入数据库配置&lt;/h4&gt;
+
+&lt;p&gt;tools/import_db.sh 会清空数据库，导入新的数据库配置（其中只包括通用配置，不包含产品信息）&lt;/p&gt;
+
+&lt;h4 id='datasocorro'&gt;添加/data/socorro链接&lt;/h4&gt;
+
+&lt;p&gt;socorro源码中假定socorro的目录为 /data/socorro，很不明白为什么要这么做，因为个人认为完全可以从可执行文件的当前路径计算出根目录，或者提供配置文件，怎么也不至于硬编码目录到源码中。 tools/socorro_link.sh 做个软链接到实际的socorro。(需要根据实际路径进行修改）&lt;/p&gt;
+
+&lt;h4 id='product'&gt;添加product配置&lt;/h4&gt;
+
+&lt;p&gt;执行SQL语句,假设你的产品名为SafeMobile,版本为3.4,平台为windows，发布日期为2013-03-05-000000&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;select add_new_product(&amp;quot;SafeMobile&amp;quot;::TEXT, 3.4::major_version)
+select add_new_release(&amp;#39;SafeMobile&amp;#39;, &amp;#39;3.4&amp;#39;, &amp;#39;Release&amp;#39;, 20130305000000,&amp;#39;Windows&amp;#39;, 0, &amp;#39;release&amp;#39;)
+select update_product_versions()&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id='id19'&gt;启动服务器&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;tools/start_postgre.sh 启动数据库
+tools/collector.sh     crash收集服务
+tools/monitor.sh       监测有哪些crash文件被收集到了
+tools/processor.sh     处理收集到的crash文件
+tools/middleware.sh    为crashstates提供API服务
+tools/crashstats.sh    用于显示崩溃信息的web服务器（利用middleware的API服务）
+
+tools/crontabber.sh&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;像系统注册crontab任务，轮循地执行数据库任务，只需要注册一次，可以crontab -e 查看是否已经注册。 crontabber会在本地记录上一次运行某个任务是什么时候，以及多长时间间隔内需要进行一次任务，如果现在的时间离上次运行时间（记录在/socorro/crontabbers.json)离得很远，则crontab则可能会运行很长时间，一种方案是自己修改socorro/socorro/cron/crontabber.py中的时间配置，另一种方案是修改/socorro/crontabbers.json.&lt;/p&gt;
+
+&lt;h4 id='id20'&gt;测试&lt;/h4&gt;
+
+&lt;p&gt;执行submit.sh 提交crash进行测试 查看网页前端 http://localhost:8000/home/products/SafeMobile&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Google Breakpad客户端部署</title>
@@ -147,6 +210,10 @@
 &lt;pre&gt;&lt;code&gt;[e:\work\project\localsvn\crashtest\main.cpp] cmd: cmd /c svn.exe cat &amp;quot;https://127.0.0.1:8443/svn/Test/CrashTest/main.cpp@7&amp;quot; --non-interactive &amp;gt; &amp;quot;E:\Work\Project\LocalSvn\svn\Test\CrashTest\main.cpp\7\main.cpp&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;其实pdb文件是个开放的格式，其中的内容由不同的“流”组成，而微软提供的source index技术，就是在pdb中添加了一个名叫&amp;#8221;srcsrv&amp;#8221;的流，其中记录了这个PDB关联到的源文件在编译的时候在本地的地址，以及通过什么样的命令可以获取到，当vs在需要显示源码的时候，会先从看是否在能期待的路径中能找到源文件（这个期待的路径也就是程序被编译的时候的源码路径），如果找不到则会调用pdb中存储的命令行(&lt;strong&gt;注意！！只有在找不到的时候才会触发源码下载的流程，否则会使用本地的源文件，哪怕文件版本不一致，被这个坑了好久。。&lt;/strong&gt;），执行之，（这时VS会弹出提示询问是否执行这个脚本），然后期待这个命令执行后，在临时目录中就能有这些文件的存在，然后显示之。&lt;/p&gt;
+
+&lt;h4 id='socorrosym_socorro'&gt;生成用于socorro(崩溃转储服务端的sym文件) (如果不用于socorro服务器，则不需要这一步)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href='http://s.yunio.com/vecIze'&gt;generate-sym.bat下载&lt;/a&gt; 将上述几个文件放在要pdb目录中(相匹配的exe也需要同样存在这个目录里），运行generate-sym.bat，顺利的话输出目录中会产生out目录，然后需要手工添加这些文件到socorro服务器中，原先考虑过在socorro服务器上同时添加ftp服务（或者SVN服务），然后可以方便上传这些符号文件，但觉得太倒腾，反正发布版本的频率也不会很高，手工拷过去算了。&lt;/p&gt;
 
 &lt;h3 id='pdb'&gt;发布pdb(建立符号服务器）&lt;/h3&gt;
 
