@@ -9,7 +9,6 @@ http://username.github.io/index.html
 http://username.github.io/atom.xml
 
 http://username.github.io/source%20index%E6%8A%80%E6%9C%AF/2014/01/22/%E5%8E%BB%E5%8C%97%E6%96%B92-%E5%9C%A8%E6%97%A0%E9%94%A1
-http://username.github.io/%E7%A8%8B%E5%BA%8F%E7%8C%BF,%E5%9C%A8%E8%B7%AF%E4%B8%8A/2013/10/30/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E6%97%A5%E8%AE%B0-06-%E5%9C%A8%E8%80%81%E5%AE%B6
 http://username.github.io/%E5%9C%A8%E8%B7%AF%E4%B8%8A,%E5%8E%BB%E5%8C%97%E6%96%B9/2013/09/18/%E5%8E%BB%E5%8C%97%E6%96%B9-01
 http://username.github.io/%E5%9C%A8%E8%B7%AF%E4%B8%8A,%E7%A8%8B%E5%BA%8F%E7%8C%BF/2013/09/17/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E6%97%A5%E8%AE%B0-05-%E5%90%AF%E7%A8%8B
 http://username.github.io/%E7%A8%8B%E5%BA%8F%E7%8C%BF,%E5%9C%A8%E8%B7%AF%E4%B8%8A/2013/08/13/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E6%97%A5%E8%AE%B0-04-%E5%BF%83%E5%9C%A8%E8%B7%AF%E4%B8%8A
