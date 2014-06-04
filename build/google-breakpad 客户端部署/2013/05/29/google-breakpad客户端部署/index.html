@@ -47,21 +47,17 @@
   
     
       
+    
+  
+    
+      
+    
+  
+    
+      
       	
       	<li><a href="/pages.html">Pages</a></li>
       	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/archive.html">Archive</a></li>
-      	
-      
-    
-  
-    
       
     
   
@@ -91,6 +87,10 @@
   
     
       
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
     
   
 
@@ -117,17 +117,17 @@
     <div class="content">
       <h1 id='googlebreakpadwindows'>google-breakpad客户端部署(windows平台）</h1>
 
-<h3 id='id3096'>版本</h3>
+<h3 id='id109'>版本</h3>
 
 <p><a href='http://code.google.com/p/google-breakpad/'>google-breakpad revision 1120</a></p>
 
-<h3 id='id3097'>简介</h3>
+<h3 id='id110'>简介</h3>
 
 <p>google-breakpad提供了绝大部分平台上的崩溃处理，转储成统一的minidump格式，并且有配套的服务端socorro可以针对上传的minidump文件进行后续的堆栈解析、去重复、统计等功能。</p>
 
 <p>本文简单介绍下怎样在windows平台下将google-break嵌入到vc工程中。（其他平台和语言暂未实验）</p>
 
-<h3 id='id3098'>原理</h3>
+<h3 id='id111'>原理</h3>
 
 <p>google-breakpad通过在程序启动时调用</p>
 
@@ -152,7 +152,7 @@
 
 <p>（而相对的google-breakpad的多平台支持的特性却未被使用到，因为目前我们产品只运行在windows平台上）。</p>
 
-<h3 id='id3099'>部署步骤</h3>
+<h3 id='id112'>部署步骤</h3>
 
 <p>因为我已经对google-breakpad做了一些封装，如果不太关心细节的话，可以直接傻瓜式调用即可。</p>
 
@@ -177,7 +177,7 @@
 	std::wstring crashSender = your/path/to/crashSender ;
 	pHandler-&gt;Init(L&quot;YourProductName&quot;, versionStr, submitUrl, crashPath, crashSender) ;</code></pre>
 
-<h4 id='id3100'>写一个异常入测试</h4>
+<h4 id='id113'>写一个异常入测试</h4>
 
 <pre><code>int * p = NULL ;
 *p = 10 ;</code></pre>
@@ -235,7 +235,7 @@
       </div>
       <hr>
       <footer>
-        <p>&copy; 2013 Name Lastname
+        <p>&copy; 2014 Name Lastname
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>

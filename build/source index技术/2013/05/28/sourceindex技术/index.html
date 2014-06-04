@@ -47,21 +47,17 @@
   
     
       
+    
+  
+    
+      
+    
+  
+    
+      
       	
       	<li><a href="/pages.html">Pages</a></li>
       	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/archive.html">Archive</a></li>
-      	
-      
-    
-  
-    
       
     
   
@@ -91,6 +87,10 @@
   
     
       
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
     
   
 
@@ -115,11 +115,11 @@
       <span>28 May 2013</span>
     </div>
     <div class="content">
-      <h3 id='id3088'>应用场合</h3>
+      <h3 id='id101'>应用场合</h3>
 
 <p>你是否碰到过这样的场合，远程调试时attach到测试人员的机器的程序上，或者在打开某个crash文件时，发现自己找不到其对应版本的pdb，并且本地的源码也已经发生了变化，而无法调试？虽然通过细致的管理（如保存每个版本的pdb，check out对应的源码)，可以解决此问题，但是很显然我们需要的是一个在exe,pdb,source code间的保持同步的机制。</p>
 
-<h3 id='id3089'>具体方案</h3>
+<h3 id='id102'>具体方案</h3>
 
 <h4 id='pdbsource_code'>在pdb和source code间保持同步</h4>
 
@@ -129,9 +129,9 @@
 
 <p>可以在局域网中建立一台符号服务器，保存每个版本的pdb文件，以达到在exe(crash文件)和pdb之间保持同步的目的。</p>
 
-<h3 id='id3090'>具体步骤</h3>
+<h3 id='id103'>具体步骤</h3>
 
-<h4 id='id3091'>准备环境</h4>
+<h4 id='id104'>准备环境</h4>
 
 <p>安装debugging tools for windows（我用的是v6.12,其他版本未测试过), 添加其中的srcsrv目录到PATH中，方便调用其中的许多命令。</p>
 
@@ -179,11 +179,11 @@
 
 <p>其中 &#8220;\pdb-server\pub_symbols&#8221; 为一个局域网中的共享目录（使得大家都能从此目录下载pdb文件），同时自己需要有这个目录的写权限</p>
 
-<h3 id='id3092'>客户端设置</h3>
+<h3 id='id105'>客户端设置</h3>
 
 <p>需要相应地设置VS以使用这些功能</p>
 
-<h4 id='id3093'>添加符号服务器地址</h4>
+<h4 id='id106'>添加符号服务器地址</h4>
 
 <p>option -&gt; Debugging -&gt; Symbols 中添加 Symbol file (.pdb) locations &#8220;\pdb-server\pub_symbols&#8221;</p>
 
@@ -191,11 +191,11 @@
 
 <p>option -&gt; Debugging -&gt; General -&gt; 勾选 Enable source server support 及其子选项 Print source server diagnostic messages to the Output window</p>
 
-<h3 id='id3094'>参考链接</h3>
+<h3 id='id107'>参考链接</h3>
 
 <p>http://www.hufuman.biz/?tag=symstore</p>
 
-<h3 id='id3095'>相关资源下载</h3>
+<h3 id='id108'>相关资源下载</h3>
 
 <p><a href='http://s.yunio.com/uemSbE&quot;'>ActivePerl-5.16.3.1603-MSWin32-x64-296746.msi</a></p>
 
@@ -252,7 +252,7 @@
       </div>
       <hr>
       <footer>
-        <p>&copy; 2013 Name Lastname
+        <p>&copy; 2014 Name Lastname
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
