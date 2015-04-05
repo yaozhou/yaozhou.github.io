@@ -1,4 +1,4 @@
 #!/bin/sh
 
 jekyll build
-jekyll server
+jekyll server --host 0.0.0.0
