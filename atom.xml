@@ -4,7 +4,7 @@
  <title>Jekyll Bootstrap</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2017-07-14T16:41:04+08:00</updated>
+ <updated>2017-07-14T17:57:47+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>Name Lastname</name>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;这张图的X轴表示月销量，Y轴左边表示具有此月销量的商品有多少个,右边是相应的百分比。 X轴第一个点表示，有约16W的商品(65%)月销量是0! 约20W(80%)的商品销量&amp;lt;=1! 95%的商品月销量&amp;lt;=9!&lt;/p&gt;
 
-&lt;p&gt;是否在淘宝繁荣的背后，看到了另一层真实? 们能看到的，始终只是这个繁华世界的太小的一个切片.&lt;/p&gt;
+&lt;p&gt;是否在淘宝繁荣的背后，看到了另一层真实? 我们能看到的，始终只是这个繁华世界的太小的一个切片.&lt;/p&gt;
 
 &lt;p&gt;注: 因销量长尾太长，（最高单品销量达到14000多，故省去了销量大于60以上的部分，否则图形会长到收不住.反正看这图形就能明白，销量越高，曲线也就越来越接近100%)&lt;/p&gt;
 
@@ -44,6 +44,11 @@
 再分析一张相似商品图.&lt;/p&gt;
 &lt;div&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/taobao/simillar.png&quot; /&gt;&lt;/div&gt;
 &lt;p&gt;X轴是销量，Y轴是相似商品的数量,可以看到大部分点集中于图的左部，销量很低的商品要不相似物品很少(本来就没什么生意)，要不就相似商品很多(人太多了，分摊到单品的销量也就少了), 再看图的右上角, 销量很高的商品，也伴随着非常多的相似产品，从这图中可以看出来，要想爬到图的右上角，得要付出多少努力。再看右下角，空空如也，淘宝上不会存在销量很高却没有相似商品和其竞争的商品的，因为淘宝是一个充分竞争的市场.&lt;/p&gt;
+
+&lt;p&gt;再看下单品价格分布:&lt;/p&gt;
+&lt;div&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/taobao/price.png&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;由图可见，销量最好的区间在100-200，有10W多的销量，其次是0-100, 整个市场90%的销量集中在0-500的区间.&lt;/p&gt;
 
 &lt;p&gt;最后再看一张商品来源的图。&lt;/p&gt;
 
