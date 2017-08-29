@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-29T16:44:59+08:00</updated><id>http://localhost:4000/</id><title type="html">阿耀的博客</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-29T16:53:47+08:00</updated><id>http://localhost:4000/</id><title type="html">阿耀的博客</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </subtitle><entry><title type="html">你不知道的淘宝_类目数据分析</title><link href="http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/07/14/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%B7%98%E5%AE%9D_%E7%B1%BB%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html" rel="alternate" type="text/html" title="你不知道的淘宝_类目数据分析" /><published>2017-07-14T00:00:00+08:00</published><updated>2017-07-14T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/07/14/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%B7%98%E5%AE%9D_%E7%B1%BB%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90</id><content type="html" xml:base="http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/07/14/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%B7%98%E5%AE%9D_%E7%B1%BB%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html">&lt;p&gt;6月份心血来潮，想学数据分析, 想了好久应该去做什么，最后想到，何不去抓一把淘宝的数据去来分析分析？ 淘宝拥有海量的商品数据和用户购买记录，我想只要分析得当，淘宝这面镜子都应该能照出国家宏观经济状况数据.&lt;/p&gt;
 
 &lt;p&gt;于是动手写了个爬虫,连续抓了一周多时间，爬取了淘宝全部商品信息(除去二手商品),包括每个商品的类目，名字，销量，价格，相似商品数量等信息。近两天有时间，简单分析了其中一个保健品的类目.&lt;/p&gt;
@@ -66,14 +66,7 @@
 &lt;p&gt;小乐预约助手 apk
 &lt;a href=&quot;http://dl.manmanqiusuo.com/yuyue_0.1.0.18.apk&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/yaozhou/hospital&quot;&gt;github地址&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="程序猿" /><category term="程序猿" /><summary type="html">很多时候我很庆幸自己这辈子干的是程序猿的工作，否则像去年老婆在安徽医科大学第二附属医院挂妇产科号，怎么也挂不上的时候，我一定都不知道该怎么办了。</summary></entry><entry><title type="html">小宝睡前故事 流氓猪</title><link href="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA.html" rel="alternate" type="text/html" title="小宝睡前故事 流氓猪" /><published>2016-10-10T00:00:00+08:00</published><updated>2016-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA</id><content type="html" xml:base="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA.html">&lt;h2 id=&quot;encoding-utf-8&quot;&gt;#encoding: utf-8&lt;/h2&gt;
-&lt;p&gt;layout: post
-category : 随便写写
-tagline: “”
-tags : [随便写写,小宝睡前故事]
-—&lt;/p&gt;
-
-&lt;p&gt;从前有一只流氓猪,他每天都骑三轮车去菜场卖菜,同时他还有一辆哈雷摩托车,每天卖完菜,就骑着摩托车上大街上,朝漂亮的小母猪吹口哨,”美女,上哥哥的车,哥哥带你去兜风”.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/yaozhou/hospital&quot;&gt;github地址&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="程序猿" /><category term="程序猿" /><summary type="html">很多时候我很庆幸自己这辈子干的是程序猿的工作，否则像去年老婆在安徽医科大学第二附属医院挂妇产科号，怎么也挂不上的时候，我一定都不知道该怎么办了。</summary></entry><entry><title type="html">小宝睡前故事 流氓猪</title><link href="http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA.html" rel="alternate" type="text/html" title="小宝睡前故事 流氓猪" /><published>2016-10-10T00:00:00+08:00</published><updated>2016-10-10T00:00:00+08:00</updated><id>http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA</id><content type="html" xml:base="http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA.html">&lt;p&gt;从前有一只流氓猪,他每天都骑三轮车去菜场卖菜,同时他还有一辆哈雷摩托车,每天卖完菜,就骑着摩托车上大街上,朝漂亮的小母猪吹口哨,”美女,上哥哥的车,哥哥带你去兜风”.&lt;/p&gt;
 
 &lt;p&gt;有一天,流氓猪又上街找美女去了,可是在路边朝好多小母猪吹口哨都没有人理她,流氓猪不知道是怎么回事,”难道是我今天的发型歪了?”,流氓猪理了理发型,没歪啊,摸了摸脸上,也没东西啊,那怎么回事?&lt;/p&gt;
 
@@ -85,14 +78,7 @@ tags : [随便写写,小宝睡前故事]
 
 &lt;p&gt;然后流氓猪赶紧回家把三轮车换成了哈雷摩托车,然后紧接着回到了街上,然后又朝路边的小母猪喊,”大白菜,一块钱一颗!”, “啊呸! 我是说,小妞,哥哥带你去兜风啊”.&lt;/p&gt;
 
-&lt;p&gt;那只小母猪看了眼流氓猪就上车了,然后说,”师傅,过十字路口往右拐,到高老庄小区”, “好嘞,您坐好!”,流氓猪开心地发动了车,不一会就开到了高老庄小区,流氓猪正在想这怎么找小母猪要电话号码的时候,小母猪说,”师傅你电话多少,我下次有事打你电话”,流氓猪开心地把电话给了小母猪,心想”今天的我肯定是太帅了,帅的小母猪都主动找我要电话了,哈哈”,&lt;/p&gt;</content><author><name></name></author><summary type="html">#encoding: utf-8 layout: post category : 随便写写 tagline: “” tags : [随便写写,小宝睡前故事] —</summary></entry><entry><title type="html">小宝睡前故事 李白的故事</title><link href="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B.html" rel="alternate" type="text/html" title="小宝睡前故事 李白的故事" /><published>2016-10-10T00:00:00+08:00</published><updated>2016-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B</id><content type="html" xml:base="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B.html">&lt;h2 id=&quot;encoding-utf-8&quot;&gt;#encoding: utf-8&lt;/h2&gt;
-&lt;p&gt;layout: post
-category : 随便写写
-tagline: “”
-tags : [随便写写,小宝睡前故事]
-—&lt;/p&gt;
-
-&lt;p&gt;李白从小调皮捣蛋,总想着要仗剑走天涯,于是在一个月黑风高夜里,趁家里人都睡着了后,收拾好了行囊,留下了个字条就爬墙离家出走了.&lt;/p&gt;
+&lt;p&gt;那只小母猪看了眼流氓猪就上车了,然后说,”师傅,过十字路口往右拐,到高老庄小区”, “好嘞,您坐好!”,流氓猪开心地发动了车,不一会就开到了高老庄小区,流氓猪正在想这怎么找小母猪要电话号码的时候,小母猪说,”师傅你电话多少,我下次有事打你电话”,流氓猪开心地把电话给了小母猪,心想”今天的我肯定是太帅了,帅的小母猪都主动找我要电话了,哈哈”,&lt;/p&gt;</content><author><name></name></author><category term="小宝睡前故事" /><category term="小宝睡前故事" /><summary type="html">从前有一只流氓猪,他每天都骑三轮车去菜场卖菜,同时他还有一辆哈雷摩托车,每天卖完菜,就骑着摩托车上大街上,朝漂亮的小母猪吹口哨,”美女,上哥哥的车,哥哥带你去兜风”.</summary></entry><entry><title type="html">小宝睡前故事 李白的故事</title><link href="http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B.html" rel="alternate" type="text/html" title="小宝睡前故事 李白的故事" /><published>2016-10-10T00:00:00+08:00</published><updated>2016-10-10T00:00:00+08:00</updated><id>http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B</id><content type="html" xml:base="http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B.html">&lt;p&gt;李白从小调皮捣蛋,总想着要仗剑走天涯,于是在一个月黑风高夜里,趁家里人都睡着了后,收拾好了行囊,留下了个字条就爬墙离家出走了.&lt;/p&gt;
 
 &lt;p&gt;李白身上没有钱,只带了一把吉他,于是来到了天桥下,背起吉他唱起了,”层梦想仗剑走天涯,看一看世界的繁华…“,这时汪伦走了过来,说,”别唱了,哥哥带你去喝酒去,我们那有万家酒店”。&lt;/p&gt;
 
@@ -120,14 +106,7 @@ tags : [随便写写,小宝睡前故事]
 
 &lt;p&gt;李白一听就傻了,心想这工作太不靠谱了.&lt;/p&gt;
 
-&lt;p&gt;然后晚上李白在宿舍里,搬个小板凳坐在宿舍门口,看着天上的明月,又低头想起了故乡,心想,哎,早知道就不出门了.&lt;/p&gt;</content><author><name></name></author><summary type="html">#encoding: utf-8 layout: post category : 随便写写 tagline: “” tags : [随便写写,小宝睡前故事] —</summary></entry><entry><title type="html">小宝睡前故事 三角形和圆形</title><link href="http://localhost:4000/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2.html" rel="alternate" type="text/html" title="小宝睡前故事 三角形和圆形" /><published>2016-10-01T00:00:00+08:00</published><updated>2016-10-01T00:00:00+08:00</updated><id>http://localhost:4000/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2</id><content type="html" xml:base="http://localhost:4000/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2.html">&lt;h2 id=&quot;encoding-utf-8&quot;&gt;#encoding: utf-8&lt;/h2&gt;
-&lt;p&gt;layout: post
-category : 随便写写
-tagline: “”
-tags : [随便写写,小宝睡前故事]
-—&lt;/p&gt;
-
-&lt;p&gt;从前有个三角形,她非常喜欢旅行,好想去到外面的世界去看看,可是自己使足了劲,却也总迈不开步子,他为此总非常懊恼.&lt;/p&gt;
+&lt;p&gt;然后晚上李白在宿舍里,搬个小板凳坐在宿舍门口,看着天上的明月,又低头想起了故乡,心想,哎,早知道就不出门了.&lt;/p&gt;</content><author><name></name></author><category term="小宝睡前故事" /><category term="小宝睡前故事" /><summary type="html">李白从小调皮捣蛋,总想着要仗剑走天涯,于是在一个月黑风高夜里,趁家里人都睡着了后,收拾好了行囊,留下了个字条就爬墙离家出走了.</summary></entry><entry><title type="html">小宝睡前故事 三角形和圆形</title><link href="http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2.html" rel="alternate" type="text/html" title="小宝睡前故事 三角形和圆形" /><published>2016-10-01T00:00:00+08:00</published><updated>2016-10-01T00:00:00+08:00</updated><id>http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2</id><content type="html" xml:base="http://localhost:4000/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2.html">&lt;p&gt;从前有个三角形,她非常喜欢旅行,好想去到外面的世界去看看,可是自己使足了劲,却也总迈不开步子,他为此总非常懊恼.&lt;/p&gt;
 
 &lt;p&gt;有一天他看到一个圆形从自己面前滚过,她感到好诧异.于是,她把圆形叫了过来,羡慕地说,”你好厉害,可以滚来滚去,你一定去过很多地方吧?”&lt;/p&gt;
 
@@ -151,7 +130,7 @@ tags : [随便写写,小宝睡前故事]
 
 &lt;p&gt;圆圈看到自己真的稳稳地停了下来,高兴得不得了.&lt;/p&gt;
 
-&lt;p&gt;再后来,圆圈和三角形天天开心地在一起,他们在天气好的时候就出去游玩,下雨的时候就在家里玩游戏聊天,幸福地在一起生活着.&lt;/p&gt;</content><author><name></name></author><summary type="html">#encoding: utf-8 layout: post category : 随便写写 tagline: “” tags : [随便写写,小宝睡前故事] —</summary></entry><entry><title type="html">小路挂了</title><link href="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86.html" rel="alternate" type="text/html" title="小路挂了" /><published>2015-09-25T00:00:00+08:00</published><updated>2015-09-25T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86</id><content type="html" xml:base="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86.html">&lt;p&gt;科目二挂了。&lt;/p&gt;
+&lt;p&gt;再后来,圆圈和三角形天天开心地在一起,他们在天气好的时候就出去游玩,下雨的时候就在家里玩游戏聊天,幸福地在一起生活着.&lt;/p&gt;</content><author><name></name></author><category term="小宝睡前故事" /><category term="小宝睡前故事" /><summary type="html">从前有个三角形,她非常喜欢旅行,好想去到外面的世界去看看,可是自己使足了劲,却也总迈不开步子,他为此总非常懊恼.</summary></entry><entry><title type="html">小路挂了</title><link href="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86.html" rel="alternate" type="text/html" title="小路挂了" /><published>2015-09-25T00:00:00+08:00</published><updated>2015-09-25T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86</id><content type="html" xml:base="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86.html">&lt;p&gt;科目二挂了。&lt;/p&gt;
 
 &lt;p&gt;挂的方式有点出乎意外，倒库倒是还顺利，一次通过，可是等到开小路来到S弯转弯的时候，突然大脑有点短路，不记得到底要看那边反光镜转方向了，稀里糊涂压线挂掉了。还好还有另一次机会，我努力平复心情，告诉自己不要慌，还有一次机会。开回起点的路上，我一直在总结S弯到底错在什么地方了，也是奇了怪了，我竟然总结出一个错误的结论————我应该看左边反光镜，刚才就是因为看了右边的反光镜才导致挂掉（而其实就是应该看右边的反光镜，我压线只是因为打方向太晚了,我也是太紧张了）。&lt;/p&gt;
 
