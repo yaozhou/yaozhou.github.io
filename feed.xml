@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-29T16:44:59+08:00</updated><id>http://localhost:4000/</id><title type="html">阿耀的博客</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">你不知道的淘宝_类目数据分析</title><link href="http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/07/14/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%B7%98%E5%AE%9D_%E7%B1%BB%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html" rel="alternate" type="text/html" title="你不知道的淘宝_类目数据分析" /><published>2017-07-14T00:00:00+08:00</published><updated>2017-07-14T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/07/14/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%B7%98%E5%AE%9D_%E7%B1%BB%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90</id><content type="html" xml:base="http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/07/14/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%B7%98%E5%AE%9D_%E7%B1%BB%E7%9B%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90.html">&lt;p&gt;6月份心血来潮，想学数据分析, 想了好久应该去做什么，最后想到，何不去抓一把淘宝的数据去来分析分析？ 淘宝拥有海量的商品数据和用户购买记录，我想只要分析得当，淘宝这面镜子都应该能照出国家宏观经济状况数据.&lt;/p&gt;
+
+&lt;p&gt;于是动手写了个爬虫,连续抓了一周多时间，爬取了淘宝全部商品信息(除去二手商品),包括每个商品的类目，名字，销量，价格，相似商品数量等信息。近两天有时间，简单分析了其中一个保健品的类目.&lt;/p&gt;
+
+&lt;p&gt;不要问我为什么只分析一个类目，而不是把所有商品数据放一起分析？等你体会过机器卡到动不了的感受后，你就明白什么叫海量数据分析的基本硬件配置了。&lt;/p&gt;
+
+&lt;p&gt;淘宝目前除二手商品外，共86个类目，这次分析的保健品类目共约24.5W个单品,月销售总额约1.5亿。&lt;/p&gt;
+
+&lt;p&gt;先放一张绝对震撼的图，这张图的名字叫”惨烈”.&lt;/p&gt;
+&lt;div&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/taobao/sales_pareto.png&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;这张图的X轴表示月销量，Y轴左边表示具有此月销量的商品有多少个,右边是相应的百分比。 X轴第一个点表示，有约16W的商品(65%)月销量是0! 约20W(80%)的商品销量&amp;lt;=1! 95%的商品月销量&amp;lt;=9!&lt;/p&gt;
+
+&lt;p&gt;是否在淘宝繁荣的背后，看到了另一层真实? 我们能看到的，始终只是这个繁华世界的太小的一个切片.&lt;/p&gt;
+
+&lt;p&gt;注: 因销量长尾太长，（最高单品销量达到14000多，故省去了销量大于60以上的部分，否则图形会长到收不住.反正看这图形就能明白，销量越高，曲线也就越来越接近100%)&lt;/p&gt;
+
+&lt;p&gt;还记得每次你去淘宝买东西，搜索关键词后, 前排第一页出现的总是一些销量其高的商品，而排在后面位置的商品，即使是一模一样的东西，甚至价格更便宜，也是无人问津的场景么？&lt;/p&gt;
+
+&lt;p&gt;你看到的就是这张图.&lt;/p&gt;
+&lt;div&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/taobao/1-99.png&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;从第一张图中可以看到销量小于60商品数量约占总数的99%,经过计算，得到这些商品总销售额约为7500W,刚好接近50%!  简单点说，就是1%的商品(卖家)占据了总销售额的50%。
+再分析一张相似商品图.&lt;/p&gt;
+&lt;div&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/taobao/simillar.png&quot; /&gt;&lt;/div&gt;
+&lt;p&gt;X轴是销量，Y轴是相似商品的数量,可以看到大部分点集中于图的左部，销量很低的商品要不相似物品很少(本来就没什么生意)，要不就相似商品很多(人太多了，分摊到单品的销量也就少了), 再看图的右上角, 销量很高的商品，也伴随着非常多的相似产品，从这图中可以看出来，要想爬到图的右上角，得要付出多少努力。再看右下角，空空如也，淘宝上不会存在销量很高却没有相似商品和其竞争的商品的，因为淘宝是一个充分竞争的市场.&lt;/p&gt;
+
+&lt;p&gt;再看下单品价格分布:&lt;/p&gt;
+&lt;div&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/taobao/price.png&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;由图可见，销量最好的区间在100-200，有10W多的销量，其次是0-100, 整个市场90%的销量集中在0-500的区间.&lt;/p&gt;
+
+&lt;p&gt;最后再看一张商品来源的图。&lt;/p&gt;
+
+&lt;div&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/taobao/daigou.png&quot; /&gt;&lt;/div&gt;
+&lt;p&gt;这张图中清楚看出，整个保健品类目，代购商品的销售额已经占到60%多了，其中以美国，澳洲，日本最多，其次是德国，新西兰，香港，台湾，韩国，法国等,可以看出，在保健品方面，国产货比例不足一半,目前虽仍占最大份额，只怕仍然会继续萎缩，而其原因，你我皆知,些许悲哀.&lt;/p&gt;</content><author><name></name></author><category term="程序猿" /><category term="程序猿" /><summary type="html">6月份心血来潮，想学数据分析, 想了好久应该去做什么，最后想到，何不去抓一把淘宝的数据去来分析分析？ 淘宝拥有海量的商品数据和用户购买记录，我想只要分析得当，淘宝这面镜子都应该能照出国家宏观经济状况数据.</summary></entry><entry><title type="html">React Native安医二院挂号开发</title><link href="http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/03/01/react-native%E5%AE%89%E5%8C%BB%E4%BA%8C%E9%99%A2%E6%8C%82%E5%8F%B7%E5%BC%80%E5%8F%91.html" rel="alternate" type="text/html" title="React Native安医二院挂号开发" /><published>2017-03-01T00:00:00+08:00</published><updated>2017-03-01T00:00:00+08:00</updated><id>http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/03/01/react-native%E5%AE%89%E5%8C%BB%E4%BA%8C%E9%99%A2%E6%8C%82%E5%8F%B7%E5%BC%80%E5%8F%91</id><content type="html" xml:base="http://localhost:4000/%E7%A8%8B%E5%BA%8F%E7%8C%BF/2017/03/01/react-native%E5%AE%89%E5%8C%BB%E4%BA%8C%E9%99%A2%E6%8C%82%E5%8F%B7%E5%BC%80%E5%8F%91.html">&lt;p&gt;很多时候我很庆幸自己这辈子干的是程序猿的工作，否则像去年老婆在安徽医科大学第二附属医院挂妇产科号，怎么也挂不上的时候，我一定都不知道该怎么办了。&lt;/p&gt;
+
+&lt;p&gt;安徽医科大学第二附属医院每天夜里12点放号，为了能让老婆休息好，每次需要产检时我都得12点守在电脑前，摩拳擦掌地准备着，一到12点就开始疯狂F5刷新，尼码，就这样还经常刷不到号.&lt;/p&gt;
+
+&lt;p&gt;那次夜里，疯狂一番刷新没刷到号后，有一种想把电脑砸掉的冲动，但是一瞬间鬼使神差地我点开了chrome的调试窗口，看了看其中交互的消息，突然一个念头冒了出来——来做个刷号软件呗！&lt;/p&gt;
+
+&lt;p&gt;于是花了几天时间，理了下其中交互的消息协议，好在一切都是http api,全都是透明的,没有任何秘密，用nodejs 结合http 包就搞定了。（后来才开始了解爬虫,也许用一些爬虫的库来做会更简单一些,虽然没有太大的差异)。&lt;/p&gt;
+
+&lt;p&gt;最初的版本运行在命令行中，操作虽不方便，但好歹可行。&lt;/p&gt;
+
+&lt;p&gt;而今年年初的时候，开始学习react native,做为练手项目，我又想起来了这个小的程序，何不把这个程序改改，写一个移动端的应用，然后分享出去给更多的人用，也让这款软件继续发挥它的价值？&lt;/p&gt;
+
+&lt;p&gt;于是又开始了100+小时的移动端开发，(其中被android后台常驻运行的坑坑了好久，最终放弃后台常驻运行的方案),最终有了下面这款自动挂号应用，目前只支持android版，不用问我为什么用react native开发的，不能同时支持IOS？没错，RN是同时支持android和IOS，可是我因为没钱买mac而无法开发IOS应用的事情，我会乱跟别人说？&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/hospital/start_page.jpg&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;
+应用的主界面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/hospital/account.png&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;
+登录界面，需要 &lt;a href=&quot;http://www.yihu.com/&quot;&gt;健康之路&lt;/a&gt;的帐号和密码&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/hospital/conf.png&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;
+配置界面，配置需要预约的医生&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/hospital/about.png&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;
+关于界面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dl.manmanqiusuo.com/hospital/help.jpg&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt;
+帮助界面&lt;/p&gt;
+
+&lt;p&gt;小乐预约助手 apk
+&lt;a href=&quot;http://dl.manmanqiusuo.com/yuyue_0.1.0.18.apk&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yaozhou/hospital&quot;&gt;github地址&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="程序猿" /><category term="程序猿" /><summary type="html">很多时候我很庆幸自己这辈子干的是程序猿的工作，否则像去年老婆在安徽医科大学第二附属医院挂妇产科号，怎么也挂不上的时候，我一定都不知道该怎么办了。</summary></entry><entry><title type="html">小宝睡前故事 流氓猪</title><link href="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA.html" rel="alternate" type="text/html" title="小宝睡前故事 流氓猪" /><published>2016-10-10T00:00:00+08:00</published><updated>2016-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA</id><content type="html" xml:base="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%B5%81%E6%B0%93%E7%8C%AA.html">&lt;h2 id=&quot;encoding-utf-8&quot;&gt;#encoding: utf-8&lt;/h2&gt;
+&lt;p&gt;layout: post
+category : 随便写写
+tagline: “”
+tags : [随便写写,小宝睡前故事]
+—&lt;/p&gt;
+
+&lt;p&gt;从前有一只流氓猪,他每天都骑三轮车去菜场卖菜,同时他还有一辆哈雷摩托车,每天卖完菜,就骑着摩托车上大街上,朝漂亮的小母猪吹口哨,”美女,上哥哥的车,哥哥带你去兜风”.&lt;/p&gt;
+
+&lt;p&gt;有一天,流氓猪又上街找美女去了,可是在路边朝好多小母猪吹口哨都没有人理她,流氓猪不知道是怎么回事,”难道是我今天的发型歪了?”,流氓猪理了理发型,没歪啊,摸了摸脸上,也没东西啊,那怎么回事?&lt;/p&gt;
+
+&lt;p&gt;正当流氓猪怎么也想不通的时候,流氓猪往身后一瞥,”妈呀,我怎么把卖菜的三轮车给骑出来了?”,后面还有一颗昨天没卖完的大白菜.&lt;/p&gt;
+
+&lt;p&gt;“太失败了”,流氓猪想,”算了,那顺便就把这课大白菜给卖了吧”,于是流氓猪扯开嗓子喊”卖大白菜啰,一块钱一颗”, 不一会走过来一只大妈猪,”卖啥一块钱,就一毛钱,这大白菜卖我了”&lt;/p&gt;
+
+&lt;p&gt;流氓猪着急去泡妞,于是就一毛钱把大白菜卖了.&lt;/p&gt;
+
+&lt;p&gt;然后流氓猪赶紧回家把三轮车换成了哈雷摩托车,然后紧接着回到了街上,然后又朝路边的小母猪喊,”大白菜,一块钱一颗!”, “啊呸! 我是说,小妞,哥哥带你去兜风啊”.&lt;/p&gt;
+
+&lt;p&gt;那只小母猪看了眼流氓猪就上车了,然后说,”师傅,过十字路口往右拐,到高老庄小区”, “好嘞,您坐好!”,流氓猪开心地发动了车,不一会就开到了高老庄小区,流氓猪正在想这怎么找小母猪要电话号码的时候,小母猪说,”师傅你电话多少,我下次有事打你电话”,流氓猪开心地把电话给了小母猪,心想”今天的我肯定是太帅了,帅的小母猪都主动找我要电话了,哈哈”,&lt;/p&gt;</content><author><name></name></author><summary type="html">#encoding: utf-8 layout: post category : 随便写写 tagline: “” tags : [随便写写,小宝睡前故事] —</summary></entry><entry><title type="html">小宝睡前故事 李白的故事</title><link href="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B.html" rel="alternate" type="text/html" title="小宝睡前故事 李白的故事" /><published>2016-10-10T00:00:00+08:00</published><updated>2016-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B</id><content type="html" xml:base="http://localhost:4000/2016/10/10/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E6%9D%8E%E7%99%BD%E7%9A%84%E6%95%85%E4%BA%8B.html">&lt;h2 id=&quot;encoding-utf-8&quot;&gt;#encoding: utf-8&lt;/h2&gt;
+&lt;p&gt;layout: post
+category : 随便写写
+tagline: “”
+tags : [随便写写,小宝睡前故事]
+—&lt;/p&gt;
+
+&lt;p&gt;李白从小调皮捣蛋,总想着要仗剑走天涯,于是在一个月黑风高夜里,趁家里人都睡着了后,收拾好了行囊,留下了个字条就爬墙离家出走了.&lt;/p&gt;
+
+&lt;p&gt;李白身上没有钱,只带了一把吉他,于是来到了天桥下,背起吉他唱起了,”层梦想仗剑走天涯,看一看世界的繁华…“,这时汪伦走了过来,说,”别唱了,哥哥带你去喝酒去,我们那有万家酒店”。&lt;/p&gt;
+
+&lt;p&gt;李白很惊讶,说,”真的啊,那么繁华?”&lt;/p&gt;
+
+&lt;p&gt;“那我还能骗你?”,汪伦肯定地说&lt;/p&gt;
+
+&lt;p&gt;于是李白把家伙收拾好了后,就跟着汪伦走了,可是路越走越偏,怎么都不像是有万家酒店的样子,过了会,汪伦说,”到了”,李白说,”汪伦你个骗子,这里那里有万家酒店?”&lt;/p&gt;
+
+&lt;p&gt;“怎么没有,你看,这就是,这就是姓万的人家开的酒店,我们都叫她万家酒店”.&lt;/p&gt;
+
+&lt;p&gt;李白被汪伦气死了,但是来都来到了,而且也确实饿了,于是就住了下来,汪伦有酒有肉地伺候着.&lt;/p&gt;
+
+&lt;p&gt;过了些天,李白觉得老是在那混吃混喝也不好,于是辞别了汪伦.再次背上行囊出发.&lt;/p&gt;
+
+&lt;p&gt;这日李白走着走着,好像走到了个厂房门口,抬头一看”中原第一制针厂”,李白想,要不我还是先打份工,挣点钱再说吧.&lt;/p&gt;
+
+&lt;p&gt;于是找到了老板,说明了来意,老板高兴地说”太好了,我们就缺像你这样的人才呢, 一个月250块铜板,管吃管住.今天就上班,我现在带你过去”.&lt;/p&gt;
+
+&lt;p&gt;于是老板把李白带到了车间里,车间里好多人都做在工作台前,每人手里都拿了跟铁棍,在桌子上的磨刀石上不停地磨, 然后老板指着墙角说,”看到那根铁棍了没,你就磨那根,等磨成针的时候,来找我”,说完就走了.&lt;/p&gt;
+
+&lt;p&gt;李白走到墙角一看,那铁棍比甘蔗还粗,心想要把这玩意磨成针,这要磨到哪辈子啊,李白来到一个工友面前,说”大哥,你啥时候开始磨针的啊?”&lt;/p&gt;
+
+&lt;p&gt;那个人说”我从小就开始磨了哎,这个铁棍是我爷爷的爷爷的爷爷一直磨的,传下来的”.&lt;/p&gt;
+
+&lt;p&gt;李白一听就傻了,心想这工作太不靠谱了.&lt;/p&gt;
+
+&lt;p&gt;然后晚上李白在宿舍里,搬个小板凳坐在宿舍门口,看着天上的明月,又低头想起了故乡,心想,哎,早知道就不出门了.&lt;/p&gt;</content><author><name></name></author><summary type="html">#encoding: utf-8 layout: post category : 随便写写 tagline: “” tags : [随便写写,小宝睡前故事] —</summary></entry><entry><title type="html">小宝睡前故事 三角形和圆形</title><link href="http://localhost:4000/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2.html" rel="alternate" type="text/html" title="小宝睡前故事 三角形和圆形" /><published>2016-10-01T00:00:00+08:00</published><updated>2016-10-01T00:00:00+08:00</updated><id>http://localhost:4000/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2</id><content type="html" xml:base="http://localhost:4000/2016/10/01/%E5%B0%8F%E5%AE%9D%E7%9D%A1%E5%89%8D%E6%95%85%E4%BA%8B-%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2.html">&lt;h2 id=&quot;encoding-utf-8&quot;&gt;#encoding: utf-8&lt;/h2&gt;
+&lt;p&gt;layout: post
+category : 随便写写
+tagline: “”
+tags : [随便写写,小宝睡前故事]
+—&lt;/p&gt;
+
+&lt;p&gt;从前有个三角形,她非常喜欢旅行,好想去到外面的世界去看看,可是自己使足了劲,却也总迈不开步子,他为此总非常懊恼.&lt;/p&gt;
+
+&lt;p&gt;有一天他看到一个圆形从自己面前滚过,她感到好诧异.于是,她把圆形叫了过来,羡慕地说,”你好厉害,可以滚来滚去,你一定去过很多地方吧?”&lt;/p&gt;
+
+&lt;p&gt;圆形说,”是啊,我去过很多很美的地方”,不等三角形回答,圆形又补充到,”其实滚来滚去很简单啊,你看,你只要和我一样,这样往前滚就好了”,说着,又开始围着三角形滚了一圈.&lt;/p&gt;
+
+&lt;p&gt;三角形羡慕地看着,突发奇想地对圆形说,”我好想去外面的世界去看看,你能带上我一起去么?”.&lt;/p&gt;
+
+&lt;p&gt;“可以啊,”,圆形说,”你看,我心里刚好有好大个空呢,你进来吧,我看刚好能把你装下呢”.&lt;/p&gt;
+
+&lt;p&gt;“太好了”,三角形说.于是三角形钻到了圆圈中间,用自己的三个定点牢牢地黏住了圆圈.&lt;/p&gt;
+
+&lt;p&gt;在之后的日子里,圆圈带着三角形去了很多地方,他们去看夕阳落在海的尽头,他们去看城市里无尽的高楼,去看田野里被风吹过的麦浪.有一次,他们还看到了一个椭圆形滚着从他们身边经过,他们都觉得椭圆形滚起来一高一低的样子简直太搞笑了.&lt;/p&gt;
+
+&lt;p&gt;然而有一天,圆形告诉三角形说,”知道么,虽然一路上的风景虽然很美,但是我却总想在什么地方停下来,静静地呆在一个地方过安定的生活,可是我却怎么也学不会该怎样停下来.”&lt;/p&gt;
+
+&lt;p&gt;“特别是遇到下坡路的时候,还有风吹的时候,我怎么也停不下来,只能没有尽头地往前方滚”.&lt;/p&gt;
+
+&lt;p&gt;“这个简单啊,我做给你看”,说着,三角形突然跳了下来,稳稳地停到了圆圈的前面,于是圆圈也稳稳地停了下来.&lt;/p&gt;
+
+&lt;p&gt;“看到了吧,多简单,下次你想停下来的时候就告诉我”.&lt;/p&gt;
+
+&lt;p&gt;圆圈看到自己真的稳稳地停了下来,高兴得不得了.&lt;/p&gt;
+
+&lt;p&gt;再后来,圆圈和三角形天天开心地在一起,他们在天气好的时候就出去游玩,下雨的时候就在家里玩游戏聊天,幸福地在一起生活着.&lt;/p&gt;</content><author><name></name></author><summary type="html">#encoding: utf-8 layout: post category : 随便写写 tagline: “” tags : [随便写写,小宝睡前故事] —</summary></entry><entry><title type="html">小路挂了</title><link href="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86.html" rel="alternate" type="text/html" title="小路挂了" /><published>2015-09-25T00:00:00+08:00</published><updated>2015-09-25T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86</id><content type="html" xml:base="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/09/25/%E5%B0%8F%E8%B7%AF%E6%8C%82%E4%BA%86.html">&lt;p&gt;科目二挂了。&lt;/p&gt;
+
+&lt;p&gt;挂的方式有点出乎意外，倒库倒是还顺利，一次通过，可是等到开小路来到S弯转弯的时候，突然大脑有点短路，不记得到底要看那边反光镜转方向了，稀里糊涂压线挂掉了。还好还有另一次机会，我努力平复心情，告诉自己不要慌，还有一次机会。开回起点的路上，我一直在总结S弯到底错在什么地方了，也是奇了怪了，我竟然总结出一个错误的结论————我应该看左边反光镜，刚才就是因为看了右边的反光镜才导致挂掉（而其实就是应该看右边的反光镜，我压线只是因为打方向太晚了,我也是太紧张了）。&lt;/p&gt;
+
+&lt;p&gt;然后没有疑问地，再次来到S弯，我又挂了。&lt;/p&gt;
+
+&lt;p&gt;那一刻觉得好沮丧，本来以为小路有两条命，怎么也不会挂掉的，现在却被同一个坑坑了两次。&lt;/p&gt;
+
+&lt;p&gt;在回终点的路上开出了一小段路后，我放松着将左手搭在车窗上，然后将头倚靠在手腕上，不知道为什么竟不再感觉到沮丧和悲伤，慢慢地心底的声音告诉我： 这不是什么大不了的事，天也没塌下来，准备下21天后再考呗。&lt;/p&gt;
+
+&lt;p&gt;中午和教练学员一起吃饭的时候，另一个考小路也挂掉的学员根本吃不下饭，并且沮丧得不想说话。而我却发现自己挺没心没肺地吃了3碗饭。。&lt;/p&gt;
+
+&lt;p&gt;回去的路上我就在想，我什么时候变了？以前的我遇到这样的失败，怎么说都得要郁闷沮丧个3、4天，不停地想各种“如果××就好了”，然后再担心“如果以后再考不过xx”该怎么办。而现在我却可以在总结出失败的原因后，简单地和自己说一句：“下次我会做得更好”，然后这件事就这么过去了!&lt;/p&gt;
+
+&lt;p&gt;我不知道这些年在我身上发生了什么样的变化，我慢慢地成熟慢慢地不再是当年那个莽撞的少年。&lt;/p&gt;
+
+&lt;p&gt;现在的我觉得，当我遇到失败时，如果我能正确地找出失败的原因，并且我没有从心理上被失败打击得垂头丧气，并且还能积极面对当前的处境，努力去想去尝试当前还可以做出什么事去弥补去面对这次失败的话————那么我其实并没有失败， 或者说这世上本没有失败，只是有许多不完美罢了。&lt;/p&gt;
+
+&lt;p&gt;回到家后我突然想到，S弯第一次挂掉的时候，为什么我没有选择转个弯回去再走一遍S弯，把错误总结出来纠正过来？这样第二次我也不会再轻易栽在那儿？&lt;/p&gt;
+
+&lt;p&gt;我想是因为，当时自己的心情波动太大，只顾着平复心情，而没有想到其实可以做到更多。&lt;/p&gt;
+
+&lt;p&gt;也许在每一个看似并不完美的不被人喜欢的处境中，都隐藏着一个最优的决策，也许这个决策就隐藏在不去抱怨，沮丧，并且全心接纳勇敢承担的那个瞬间里吧，再坎坷的境遇里也许都隐藏着一个转化的契机。&lt;/p&gt;
+
+&lt;p&gt;我觉得自己有点想感谢这次失败了，它更深地触到了我心里的某个东西，又给我带来了很多东西，而这些东西远比顺利通过考试给我带来的快乐更大，更值得我去感激，好吧，我觉得自己好像离疯不远了。&lt;/p&gt;
+
+&lt;p&gt;小路考经验：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;在每次开始一个考项前，仔细过一遍接下来要走的步骤，平时练到烂，练到凭直觉就能走并不能保证临场能一样发挥，因为是人到场都会紧张。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="随便写写" /><category term="随便写写" /><summary type="html">科目二挂了。</summary></entry><entry><title type="html">给我的孩子</title><link href="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/04/03/%E7%BB%99%E6%88%91%E7%9A%84%E5%AD%A9%E5%AD%90.html" rel="alternate" type="text/html" title="给我的孩子" /><published>2015-04-03T00:00:00+08:00</published><updated>2015-04-03T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/04/03/%E7%BB%99%E6%88%91%E7%9A%84%E5%AD%A9%E5%AD%90</id><content type="html" xml:base="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2015/04/03/%E7%BB%99%E6%88%91%E7%9A%84%E5%AD%A9%E5%AD%90.html">&lt;p&gt;一切从那天夜里的梦开始，在梦里你的妈妈告诉我说，她怀孕了，你就要来我们家了，那一刻梦中的我竟是那样的无以言表的开心，仿佛得到了世界上最美好的礼物。&lt;/p&gt;
+
+&lt;p&gt;后来的日子里，我就会经常想到你，尽管你还并没有出世，甚至你此刻还并没有在你妈妈的肚子里，但是我却常常想到你——想你会是个男孩还是女孩，想到你会给我们家带来的快乐，想你的时候就觉得心里一直暖暖的。&lt;/p&gt;
+
+&lt;p&gt;然而在慢慢期待你来我们这个家的时候，一种责任感也慢慢地在爸爸的胸口弥漫扩散，有时甚至带着一点点慌张——我会成为你合格的父亲么？怎样才算是一个合格的父亲呢？&lt;/p&gt;
+
+&lt;p&gt;我一直没有想明白，直到有天我听到了一句话，“如果你希望你的孩子成为什么样的人，那么做为父亲的你，就先做这样的一个人给孩子看”。突然一瞬间我找到了答案。&lt;/p&gt;
+
+&lt;p&gt;孩子，我希望你能健康、阳光、快乐、善良、勇敢，为此，我也需要成为这样的人，因为我不希望成为一个把自己未完成的梦想、生活寄托在你身上，需要你承担我生命的遗憾的糟糕的父亲;我希望你能勇敢追逐你的梦想，所以今天我会更加努力追求我的梦想;我希望你能永远坚强，即使在最困难的境遇里，所以今天的我不管遇到什么样的挫折，也都会学着勇敢面对，不再继续逃避;我希望你的生命中永远保存相信着美好，所以我也会始终相信明天的美好，即使目睹了太多现实的残酷与无奈。。&lt;/p&gt;
+
+&lt;p&gt;知道么，虽然你还没有来到我们家，却已经给我带来了太多的改变，因为爸爸要准备一个更加好的自己，去迎接你的到来，我希望你能喜欢爸爸所在的这个家，我希望你能喜欢你的爸爸，妈妈。&lt;/p&gt;
+
+&lt;p&gt;孩子，爸爸期待着你的到来。&lt;/p&gt;</content><author><name></name></author><category term="随便写写" /><category term="随便写写" /><summary type="html">一切从那天夜里的梦开始，在梦里你的妈妈告诉我说，她怀孕了，你就要来我们家了，那一刻梦中的我竟是那样的无以言表的开心，仿佛得到了世界上最美好的礼物。</summary></entry><entry><title type="html">吃着馄饨，浪迹天涯</title><link href="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2014/03/23/%E5%90%83%E7%9D%80%E9%A6%84%E9%A5%A8-%E6%B5%AA%E8%BF%B9%E5%A4%A9%E6%B6%AF.html" rel="alternate" type="text/html" title="吃着馄饨，浪迹天涯" /><published>2014-03-23T00:00:00+08:00</published><updated>2014-03-23T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2014/03/23/%E5%90%83%E7%9D%80%E9%A6%84%E9%A5%A8,%E6%B5%AA%E8%BF%B9%E5%A4%A9%E6%B6%AF</id><content type="html" xml:base="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2014/03/23/%E5%90%83%E7%9D%80%E9%A6%84%E9%A5%A8-%E6%B5%AA%E8%BF%B9%E5%A4%A9%E6%B6%AF.html">&lt;p&gt;工作后，吉他慢慢开始生疏了，会唱会弹的歌也越来越少，不过却总有一些旋律始终不曾忘记。&lt;/p&gt;
+
+&lt;p&gt;而算下来，从08年开始，平均每年都有一天，我会背上吉他，来到地下人行通道，或是地铁出口通道里，装扮成流浪歌手，唱一些自己喜欢的歌。&lt;/p&gt;
+
+&lt;p&gt;那天晚上来到娄山关路地铁出口的时候，天气有点冷。一个摆地摊的大妈在对面不远处，略带好奇地看着我，还有来来往往的人们，也是同样的眼神。&lt;/p&gt;
+
+&lt;p&gt;不过我早已习惯了。&lt;/p&gt;
+
+&lt;p&gt;唱着歌的某一瞬间，突然我想明白了，为什么我喜欢在这儿唱歌的原因。&lt;/p&gt;
+
+&lt;p&gt;也许就是一种脱离自己固定生活轨迹的感觉吧。总有那么一瞬间，我想暂时逃离我的一切，我的职业，我的昨天，我的圈子，我的理想，我的所有。只是简单地在一个地方唱着，沉浸在自己的歌声里。而总在这时，我能更清晰地知道我是谁——我不是我所拥有的和不曾拥有的一切，我只是我自己。&lt;/p&gt;
+
+&lt;p&gt;而每次看到有人在经过的时候哪怕稍稍减慢了一点脚步，也会让感到很欣慰——至少我的歌声在他们重复的下班路途中带来了一点点不一样的变化，不是么？&lt;/p&gt;
+
+&lt;p&gt;有个女孩过来给了5块钱，然后冲我笑了笑，我也莫名地会心地对着她笑。&lt;/p&gt;
+
+&lt;p&gt;还有位姑娘，问我会不会唱那谁，邓紫琪的什么歌，我好尴尬地说我没听过。。&lt;/p&gt;
+
+&lt;p&gt;我还唱了自己写的《朋友》，听起来挺好。&lt;/p&gt;
+
+&lt;p&gt;唱了40多分钟，结束的时候，数了数，28块钱，还不错。&lt;/p&gt;
+
+&lt;p&gt;唱完后才发现自己又冷又饿，偶然发现街边还有家24小时营业的小吃店，于是进去用刚刚收获的钱，点了碗菜肉大馄饨。&lt;/p&gt;
+
+&lt;p&gt;已经是午夜了，店里仍然有着各色各样的人们，不同的装束，不同的表情，让我感觉自己像是身处另一个世界。想起了小时候，有一次晚上趁父母睡着了，一个人摸着黑跑到街上的游戏厅里打游戏的经历，冒险而刺激。那本是个我应该睡着了的时间点，可却发现游戏厅里仍然灯火通明，甚至我还在里面发现了我的同班同学（那些道貌岸然的家伙居然也和我一样!）,不禁让我怀疑，我的世界究竟是有多小，而我又究竟错过了多少有趣的内容。&lt;/p&gt;
+
+&lt;p&gt;在这寒冷的午夜，看着每个不同行色的人，脸上似乎都写了一个个不同的故事，突然让我有种身处武侠故事中江湖客栈的感觉。于是也想像着某一天，我就这样背着吉他，一路吃着馄饨，唱着歌，独自浪迹天涯，那该是个多么放荡不羁的故事啊。&lt;/p&gt;
+
+&lt;p&gt;然后顿时一种慷慨而孤独的感觉伴随着馄饨的热气一起蒸腾而生，让我内心澎湃不已——唉，我小时候看的那些武侠小说对我的影响是有多大啊，那些侠义流浪的情结，多少年来始终都在我内心的最深处。&lt;/p&gt;
+
+&lt;p&gt;不过我还是很喜欢那种感觉，偶尔去过一些不一样的生活，不拒绝生命里每一次顺其自然的改变。冥冥中每一次的意外，总是会在最终拼凑成一幅更有意义的图案，也许那就是我生命的意义吧。所有我需要去做的就是去顺着生命的河流朝前漂流，去倾听那个属于我生命的旋律。&lt;/p&gt;</content><author><name></name></author><category term="随便写写" /><category term="随便写写" /><summary type="html">工作后，吉他慢慢开始生疏了，会唱会弹的歌也越来越少，不过却总有一些旋律始终不曾忘记。</summary></entry><entry><title type="html">小王子 长大后的童话</title><link href="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2014/03/11/%E5%B0%8F%E7%8E%8B%E5%AD%90-%E9%95%BF%E5%A4%A7%E5%90%8E%E7%9A%84%E7%AB%A5%E8%AF%9D.html" rel="alternate" type="text/html" title="小王子 长大后的童话" /><published>2014-03-11T00:00:00+08:00</published><updated>2014-03-11T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2014/03/11/%E5%B0%8F%E7%8E%8B%E5%AD%90-%E9%95%BF%E5%A4%A7%E5%90%8E%E7%9A%84%E7%AB%A5%E8%AF%9D</id><content type="html" xml:base="http://localhost:4000/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/2014/03/11/%E5%B0%8F%E7%8E%8B%E5%AD%90-%E9%95%BF%E5%A4%A7%E5%90%8E%E7%9A%84%E7%AB%A5%E8%AF%9D.html">&lt;p&gt;说不清是什么原因，我会去读《小王子》这样的童话故事。也许是觉得自己老了吧。&lt;/p&gt;
+
+&lt;p&gt;小王子拜访了他临近星球上的人们，325星球上想要统治一切的国王，326星球上的虚荣者，327星球上自欺欺人的酒鬼，328星球上那个迷失自我的实业家，329星球上那个孤独的点灯人，310星球上守在办公室里的地理学家。&lt;/p&gt;
+
+&lt;p&gt;而最终小王子来到了地球，这个有着111个国王，7000个地理学家,90万的实业家，750万个酒鬼，3亿多虚荣者的星球上。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;“你好。”小王子试探地问道。
+“你好……你好……你好……”回音在回答道。
+“你们是什么人？”小王子问。
+“你们是什么人……你们是什么人……你们是什么人……”回音又回答道。
+“请你们做我的朋友吧，我很孤独。”他说。
+“我很孤独……我很孤独……我很孤独……”回音又回答着。
+小王子想道：“这颗行星真奇怪！它上面全是干巴巴的，而且又尖利又咸涩，人们一点想象力都没有。他们只是重复别人对他们说的话……&quot;
+
+“人在什么地方？”小王子终于又开了腔。“在沙漠上，真有点孤独……”
+“到了有人的地方，也一样孤独。”蛇说。
+
+有一天，花曾看见一支骆驼商队走过：
+“人吗？我想大约有六七个人，几年前，我瞅见过他们。可是，从来不知道到什么地方去找他们。风吹着他们到处跑。他们没有根，这对他们来说是很不方便的。”
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;最让我感动的是小王子送给飞行员的礼物，他送给飞行员的是满满整个天空的星星，微笑着的开放着花朵的星星。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;“夜晚，你抬头望着星星，我的那颗太小了，我无法给你指出我的那颗星星是在哪里。这样倒更好。你可以认为我的那颗星星就在这些星星之中。那么，所有的星星，你都会喜欢看的……这些星星都将成为你的朋友。”
+
+“夜晚，当你望着天空的时候，既然我就住在其中一颗星星上，既然我在其中一颗星星上笑着，那么对你来说，就好象所有的星星都在笑，那么你将看到的星星就是会笑的星星！”
+
+“那么，在你得到了安慰之后（人们总是会自我安慰的）你就会因为认识了我而感到高兴。你将永远是我的朋友。你就会想要同我一起笑。有时，你会为了快乐而不知不觉地打开窗户。你的朋友们会奇怪地看着你笑着仰望天空。那时，你就可以对他们说：‘是的，星星总是引我欢笑！”
+
+“这就好象我并没有给你星星，而是给你一大堆会笑出声来的小铃铛……”
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我也曾经想过，什么样的礼物才算是最珍贵的，也许答案就是像小王子给飞行员的满天星空的美好幻想。&lt;/p&gt;
+
+&lt;p&gt;也像是曾经搭车的经历，那些车主赠送给我的真的仅仅是一段免费的搭乘么——远远不是，他们给我最美好的礼物是那种让我感动的淡淡的温暖，是我固有的防备之心的慢慢瓦解，是我心底默默相信世界的美好，这些才是他们给我的最美好的礼物。&lt;/p&gt;
+
+&lt;p&gt;曾经也想将这样的礼物送给别人，遗憾的是并不是每个人都能理解。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;实质性的东西，用眼睛是看不见的&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也许只有用心，才能真正看清。&lt;/p&gt;
+
+&lt;p&gt;我们慢慢长大，却慢慢迷失，只有孩子知道自己是谁。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;此时，第三趟灯火明亮的快车又隆隆而过。
+“他们是在追随第一批旅客吗？”小王子问道。
+“他们什么也不追随。”扳道工说，“他们在里面睡觉，或是在打哈欠。只有孩子们把鼻子贴在玻璃窗上往外看。”
+“只有孩子知道他们自己在寻找什么。” 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="随便写写" /><category term="随便写写" /><summary type="html">说不清是什么原因，我会去读《小王子》这样的童话故事。也许是觉得自己老了吧。</summary></entry><entry><title type="html">我的父亲</title><link href="http://localhost:4000/%E4%B8%AA%E4%BA%BA/2014/02/01/%E6%88%91%E7%9A%84%E7%88%B6%E4%BA%B2.html" rel="alternate" type="text/html" title="我的父亲" /><published>2014-02-01T00:00:00+08:00</published><updated>2014-02-01T00:00:00+08:00</updated><id>http://localhost:4000/%E4%B8%AA%E4%BA%BA/2014/02/01/%E6%88%91%E7%9A%84%E7%88%B6%E4%BA%B2</id><content type="html" xml:base="http://localhost:4000/%E4%B8%AA%E4%BA%BA/2014/02/01/%E6%88%91%E7%9A%84%E7%88%B6%E4%BA%B2.html">&lt;p&gt;我的父母在我小学6年级刚毕业的时候，就离婚了。还记得那天考完升学考试最后一场后，回到家，被我舅妈叫到我外婆那，在那看到我外婆还有我妈，脸上的表情我无法言述。&lt;/p&gt;
+
+&lt;p&gt;我舅妈问我,“你爸妈要离婚了，你要跟谁过？”，很多年过去了，我一直都想不起，我当时到底是怎么回答的，也不记得是怎么离开的，关于那个场景唯一的记忆就是我舅妈问我的那句话，”你要跟谁过？“&lt;/p&gt;
+
+&lt;p&gt;很多年后的现在，我依然和母亲一起生活，而和父亲已经很久没有联系了，那天和我妈一起散步聊天，不知道为什么问起我妈，“我性格里有多少是和我爸一样的？有多少又是和你一样的？”，我妈想了半天说，“大部分都像你爸，少数像我“。&lt;/p&gt;
+
+&lt;p&gt;我细想看，好像也是这样，性格温和，没什么脾气，够朋友，坦诚，诚实，不屈从的倔强等等，确实都是继承于他，虽然他不是个优秀的父亲，甚至算不上是个有责任心的合格父亲，但是却继承给了我这些我珍惜着的特质（当然他也同样继承给我太多缺点）。&lt;/p&gt;
+
+&lt;p&gt;至于我妈性格里的那种坚忍和坚持，也继承给了我很多。&lt;/p&gt;
+
+&lt;p&gt;从这个角度来说，我想我也许应该去感谢他们，即使他们曾经在许多地方让我失望，但他们却给了我某些生而具有的东西，让我成为我现在的样子。&lt;/p&gt;
+
+&lt;p&gt;过年在家的时候，也听说我爸又要结婚了，他没有告诉我，祝你幸福吧。&lt;/p&gt;
+
+&lt;p&gt;我也希望，到那天我能成为个优秀的父亲，然后某天能厚着脸皮和我的孩子调侃着说，“知道么，你比我幸福，因为你有个优秀的父亲”，呵。&lt;/p&gt;</content><author><name></name></author><category term="个人" /><category term="个人" /><summary type="html">我的父母在我小学6年级刚毕业的时候，就离婚了。还记得那天考完升学考试最后一场后，回到家，被我舅妈叫到我外婆那，在那看到我外婆还有我妈，脸上的表情我无法言述。</summary></entry></feed>
